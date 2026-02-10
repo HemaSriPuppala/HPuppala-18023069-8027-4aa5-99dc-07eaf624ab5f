@@ -17,7 +17,7 @@ _A modern, secure, role-based task management system with a beautiful UI and rob
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Features](#-features)
@@ -36,7 +36,7 @@ _A modern, secure, role-based task management system with a beautiful UI and rob
 
 ---
 
-## 🎯 Overview
+## Overview
 
 This is a **full-stack task management application** built with modern technologies, featuring:
 
@@ -51,7 +51,7 @@ This is a **full-stack task management application** built with modern technolog
 
 ---
 
-## ✨ Features
+## Features
 
 ### 🔐 Authentication & Authorization
 
@@ -148,7 +148,7 @@ Before you begin, ensure you have the following installed:
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Clone the Repository
 
@@ -275,7 +275,7 @@ See the complete [Entity Relationship Diagram](./docs/ERD.md) for detailed schem
 
 ---
 
-## 📡 API Documentation
+## API Documentation
 
 ### Authentication Endpoints
 
@@ -328,7 +328,7 @@ Login with username and password
 
 ---
 
-## 👥 User Roles & Permissions
+## User Roles & Permissions
 
 ### 🔴 OWNER (Highest Privilege)
 
@@ -358,7 +358,7 @@ Login with username and password
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ### Login Page
 
@@ -378,7 +378,7 @@ Login with username and password
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Run Backend Tests
 
@@ -504,7 +504,7 @@ This project is created for assessment purposes only.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - NestJS team for the amazing framework
 - Angular team for the powerful frontend framework
