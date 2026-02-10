@@ -13,7 +13,8 @@ export const appRoutes: Route[] = [
         canActivate: [AuthGuard],
         children: [
             { path: '', loadComponent: () => import('./pages/tasks/task-board.component').then(m => m.TaskBoardComponent) },
-            { path: 'team', loadComponent: () => import('./pages/team-members/team-members.component').then(m => m.TeamMembersComponent) }
+            { path: 'team', loadComponent: () => import('./pages/team-members/team-members.component').then(m => m.TeamMembersComponent) },
+            { path: 'analytics', loadComponent: () => import('./pages/analytics/analytics.component').then(m => m.AnalyticsComponent) }
         ]
     },
     { path: '**', redirectTo: '' }

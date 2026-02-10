@@ -1,0 +1,171 @@
+<div class="p-6 max-w-7xl mx-auto space-y-8 animate-fade-in">
+  <!-- Header -->
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div>
+      <h1 class="text-3xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
+        Analytics Dashboard
+      </h1>
+      <p class="text-slate-400 mt-1">
+        {{ role === Role.OWNER ? 'Organization Overview' : 'Team Performance' }}
+      </p>
+    </div>
+    
+    <div class="flex items-center gap-3">
+        <div class="px-4 py-2 rounded-lg bg-surface-800 border border-white/5 text-sm text-slate-300">
+            Scanning: <span class="text-white font-medium">{{ totalTasks }} Tasks</span>
+        </div>
+        <button (click)="loadData()" 
+            class="p-2 rounded-lg bg-surface-800 hover:bg-surface-700 text-primary-400 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v3.276a1 1 0 01-2 0V14.907a7.002 7.002 0 01-12.203-3.238 1 1 0 01.61-1.276z" clip-rule="evenodd" />
+            </svg>
+        </button>
+    </div>
+  </div>
+
+  <!-- Key Metrics Row -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Metric Card 1 -->
+    <div class="neo-card p-6 rounded-2xl bg-surface-800/50 backdrop-blur-sm border border-white/5 relative overflow-hidden group">
+      <div class="absolute -right-6 -top-6 w-24 h-24 bg-primary-500/10 rounded-full blur-xl group-hover:bg-primary-500/20 transition-all"></div>
+      <div class="relative">
+        <p class="text-sm font-medium text-slate-400 uppercase tracking-wider">Total Tasks</p>
+        <div class="mt-2 flex items-baseline gap-2">
+            <span class="text-4xl font-bold text-white">{{ totalTasks }}</span>
+            <span class="text-sm text-emerald-400 flex items-center">
+                All Time
+            </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Metric Card 2 -->
+    <div class="neo-card p-6 rounded-2xl bg-surface-800/50 backdrop-blur-sm border border-white/5 relative overflow-hidden group">
+      <div class="absolute -right-6 -top-6 w-24 h-24 bg-accent-500/10 rounded-full blur-xl group-hover:bg-accent-500/20 transition-all"></div>
+      <div class="relative">
+        <p class="text-sm font-medium text-slate-400 uppercase tracking-wider">Completion Rate</p>
+        <div class="mt-2 flex items-baseline gap-2">
+            <span class="text-4xl font-bold text-white">{{ completionRate }}%</span>
+            <span class="text-sm text-slate-400">{{ doneTasks }} / {{ totalTasks }}</span>
+        </div>
+        <!-- Mini Progress Bar -->
+        <div class="w-full h-1 bg-surface-700 rounded-full mt-3 overflow-hidden">
+            <div class="h-full bg-accent-500 rounded-full transition-all duration-1000 ease-out" [style.width.%]="completionRate"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Metric Card 3 -->
+    <div class="neo-card p-6 rounded-2xl bg-surface-800/50 backdrop-blur-sm border border-white/5 relative overflow-hidden group">
+      <div class="absolute -right-6 -top-6 w-24 h-24 bg-blue-500/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all"></div>
+      <div class="relative">
+        <p class="text-sm font-medium text-slate-400 uppercase tracking-wider">In Progress</p>
+        <div class="mt-2 flex items-baseline gap-2">
+            <span class="text-4xl font-bold text-white">{{ inProgressTasks }}</span>
+            <span class="text-sm text-blue-400">Active</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Metric Card 4 (Role Specific) -->
+    <div class="neo-card p-6 rounded-2xl bg-surface-800/50 backdrop-blur-sm border border-white/5 relative overflow-hidden group">
+      <div class="absolute -right-6 -top-6 w-24 h-24 bg-purple-500/10 rounded-full blur-xl group-hover:bg-purple-500/20 transition-all"></div>
+      <div class="relative">
+        <p class="text-sm font-medium text-slate-400 uppercase tracking-wider">
+            {{ role === Role.OWNER ? 'Total Users' : 'Team Members' }}
+        </p>
+        <div class="mt-2 flex items-baseline gap-2">
+            <span class="text-4xl font-bold text-white">{{ role === Role.OWNER ? totalUsers : teamMembersCount }}</span>
+            <span class="text-sm text-purple-400">
+                {{ role === Role.OWNER ? 'System Wide' : 'Your Team' }}
+            </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts Row -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    
+    <!-- Status Distribution (Donut Chart) -->
+    <div class="lg:col-span-1 neo-card p-6 rounded-2xl bg-surface-800/50 backdrop-blur-sm border border-white/5 flex flex-col">
+        <h3 class="text-lg font-semibold text-white mb-6">Task Distribution</h3>
+        
+        <div class="relative aspect-square max-w-[250px] mx-auto flex items-center justify-center">
+            <!-- Custom CSS Conic Gradient Donut -->
+            <div class="w-full h-full rounded-full relative"
+                 [style.background]="getConicGradient()">
+                 <!-- Inner Hole -->
+                 <div class="absolute inset-4 bg-surface-900 rounded-full flex flex-col items-center justify-center">
+                     <span class="text-3xl font-bold text-white">{{ totalTasks }}</span>
+                     <span class="text-xs text-slate-400 uppercase">Tasks</span>
+                 </div>
+            </div>
+        </div>
+
+        <div class="mt-6 space-y-3">
+            <div class="flex items-center justify-between text-sm">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                    <span class="text-slate-300">Done</span>
+                </div>
+                <span class="text-white font-medium">{{ doneTasks }} ({{ getPercent(doneTasks) }}%)</span>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+                    <span class="text-slate-300">In Progress</span>
+                </div>
+                <span class="text-white font-medium">{{ inProgressTasks }} ({{ getPercent(inProgressTasks) }}%)</span>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-slate-500"></span>
+                    <span class="text-slate-300">Open</span>
+                </div>
+                <span class="text-white font-medium">{{ openTasks }} ({{ getPercent(openTasks) }}%)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Performance / Breakdown (Bar Chart) -->
+    <div class="lg:col-span-2 neo-card p-6 rounded-2xl bg-surface-800/50 backdrop-blur-sm border border-white/5 flex flex-col">
+        <h3 class="text-lg font-semibold text-white mb-6">
+            {{ role === Role.OWNER ? 'User Workload' : 'Member Performance' }}
+        </h3>
+        
+        <div class="flex-1 flex flex-col justify-end space-y-4 min-h-[300px]">
+            <!-- List of bars -->
+            <div *ngFor="let item of memberPerformance" class="group">
+                <div class="flex items-center justify-between text-sm text-slate-300 mb-1">
+                    <span class="font-medium group-hover:text-white transition-colors">{{ item.name }}</span>
+                    <span class="text-xs">{{ item.done }} / {{ item.total }} Done</span>
+                </div>
+                <div class="w-full h-4 bg-surface-700 rounded-full overflow-hidden relative">
+                    <!-- Background bar (Total load relative to max?) or just completion bar -->
+                    <!-- Let's do a stacked bar: Done vs Pending -->
+                    <div class="flex h-full w-full">
+                        <div class="h-full bg-emerald-500 transition-all duration-1000 relative group/bar" 
+                             [style.width.%]="(item.done / maxTasks) * 100">
+                             <div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-surface-900 border border-white/10 text-white text-xs py-1 px-2 rounded opacity-0 group-hover/bar:opacity-100 transition-opacity whitespace-nowrap z-10">
+                                {{ item.done }} Done
+                             </div>
+                        </div>
+                        <div class="h-full bg-blue-500/50 transition-all duration-1000 relative group/bar" 
+                             [style.width.%]="((item.total - item.done) / maxTasks) * 100">
+                             <div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-surface-900 border border-white/10 text-white text-xs py-1 px-2 rounded opacity-0 group-hover/bar:opacity-100 transition-opacity whitespace-nowrap z-10">
+                                {{ item.total - item.done }} Active
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="memberPerformance.length === 0" class="flex-1 flex items-center justify-center text-slate-500">
+                No data available for display
+            </div>
+        </div>
+    </div>
+
+  </div>
+</div>
