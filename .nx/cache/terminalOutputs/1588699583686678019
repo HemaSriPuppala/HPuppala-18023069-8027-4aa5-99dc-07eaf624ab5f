@@ -1,0 +1,40 @@
+[33m❯[39m Building...
+● [DEBUG] Resolving import "@angular/animations/browser" in directory "D:\\Documents\\Projects\\Assesments\\Turbovets\\antigravity-ai-assessment\\node_modules\\@angular\\platform-browser\\fesm2022" of type "import-statement"
+
+  Checking for package alias matches
+    Failed to find any package alias matches
+  Read 12 entries for directory "D:\\Documents\\Projects\\Assesments\\Turbovets\\antigravity-ai-assessment\\node_modules\\@angular\\platform-browser\\fesm2022"
+  No "browser" map found in directory "D:\\Documents\\Projects\\Assesments\\Turbovets\\antigravity-ai-assessment\\node_modules\\@angular\\platform-browser\\fesm2022"
+  Searching for "@angular/animations/browser" in "node_modules" directories starting from "D:\\Documents\\Projects\\Assesments\\Turbovets\\antigravity-ai-assessment\\node_modules\\@angular\\platform-browser\\fesm2022"
+    Parsed package name "@angular/animations" and package subpath "./browser"
+    Checking for a package in the directory "D:\\Documents\\Projects\\Assesments\\Turbovets\\antigravity-ai-assessment\\node_modules\\@angular\\animations\\browser"
+    Read 12 entries for directory "D:\\Documents\\Projects\\Assesments\\Turbovets\\antigravity-ai-assessment\\node_modules\\@angular"
+    Failed to read directory "D:\\Documents\\Projects\\Assesments\\Turbovets\\antigravity-ai-assessment\\node_modules\\@angular\\animations": open D:\Documents\Projects\Assesments\Turbovets\antigravity-ai-assessment\node_modules\@angular\animations: The system cannot find the file specified.
+    Failed to read directory "D:\\Documents\\Projects\\Assesments\\Turbovets\\antigravity-ai-assessment\\node_modules\\@angular\\animations"
+    Attempting to load "D:\\Documents\\Projects\\Assesments\\Turbovets\\antigravity-ai-assessment\\node_modules\\@angular\\animations\\browser" as a file
+      Failed to read directory "D:\\Documents\\Projects\\Assesments\\Turbovets\\antigravity-ai-assessment\\node_modules\\@angular\\animations": open D:\Documents\Projects\Assesments\Turbovets\antigravity-ai-assessment\node_modules\@angular\animations: The system cannot find the file specified.
+    Attempting to load "D:\\Documents\\Projects\\Assesments\\Turbovets\\antigravity-ai-assessment\\node_modules\\@angular\\animations\\browser" as a directory
+      Failed to read directory "D:\\Documents\\Projects\\Assesments\\Turbovets\\antigravity-ai-assessment\\node_modules\\@angular\\animations"
+      Failed to read directory "D:\\Documents\\Projects\\Assesments\\Turbovets\\antigravity-ai-assessment\\node_modules\\@angular\\animations\\browser"
+
+X [ERROR] Could not resolve "@angular/animations/browser"
+
+    node_modules/@angular/platform-browser/fesm2022/animations.mjs:10:20:
+      10 │ import * as i1 from '@angular/animations/browser';
+         ╵                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  You can mark the path "@angular/animations/browser" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+1 error
+[32m✔[39m Building...
+[37mApplication bundle generation failed. [1.319 seconds] - 2026-02-09T18:09:55.806Z[39m
+[37m[39m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "@angular/animations/browser"[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m    node_modules/@angular/platform-browser/fesm2022/animations.mjs:10:20:[39m[22m
+[1m[31m[37m      10 │ import * as i1 from [32m'@angular/animations/browser'[37m;[39m[22m
+[1m[31m         ╵                     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  You can mark the path "@angular/animations/browser" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m

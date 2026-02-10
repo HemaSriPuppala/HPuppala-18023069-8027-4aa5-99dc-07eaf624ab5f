@@ -1,0 +1,40 @@
+
+ NX   generate @nx/nest:resource [path] [options,...]
+
+
+From:  @nx/nest (v22.4.5)
+Name:  resource
+
+
+  Nest Resource Options Schema.
+
+
+Options:
+    --path              The file path to the                            [string]
+                        resource. Relative to the
+                        current working directory.
+    --crud              When true, CRUD entry points   [boolean] [default: true]
+                        are generated.
+    --skipImport        Flag to skip the module                        [boolean]
+                        import.
+    --type              The transport layer.          [string] [choices: "rest",
+                                                           "graphql-code-first",
+                                                         "graphql-schema-first",
+                                                           "microservice", "ws"]
+                                                               [default: "rest"]
+    --unitTestRunner    Test runner to use for unit   [string] [choices: "jest",
+                        tests.                         "none"] [default: "jest"]
+    --skipFormat        Skip formatting files.                         [boolean]
+
+Examples:
+    nx g @nx/nest:resource              Generate `myapp/src/app/entities/foo.e
+    myapp/src/app/foo                   ntity.ts`,
+                                        `myapp/src/app/dto/create-foo.dto.ts`,
+                                        `myapp/src/app/dto/update-foo.dto.ts`,
+                                        `myapp/src/app/foo.service.ts`,
+                                        `myapp/src/app/foo.controller.ts`, and
+                                        `myapp/src/app/foo.module.ts`
+
+
+Find more information and examples at: https://nx.dev/nx-api/nest/generators/resource
+

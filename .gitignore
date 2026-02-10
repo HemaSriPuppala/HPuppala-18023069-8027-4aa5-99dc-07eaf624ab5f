@@ -1,0 +1,16 @@
+# compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# dependencies
+/node_modules
+
+# analytics
+.angular
+
+# misc
+.DS_Store
+Thumbs.db
+.nx

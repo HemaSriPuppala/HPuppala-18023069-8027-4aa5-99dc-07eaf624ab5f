@@ -1,0 +1,207 @@
+
+[2m> [22m[2mnx run[22m api:build:development  [2m[local cache][22m
+
+[2m> [22mwebpack-cli build --node-env=development
+
+webpack compiled [1m[32msuccessfully[39m[22m (bfd3f263244a9423)
+
+
+
+[0m[7m[1m[32m NX [39m[22m[27m[0m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+
+[2mNx read the output from the cache instead of running the command for 1 out of 1 tasks.[22m
+
+[1m[31mDebugger listening on ws://localhost:9229/dcc2f065-55a8-4892-80a7-11c751b5948a[39m[22m
+[1m[31mDebugger listening on ws://localhost:9229/dcc2f065-55a8-4892-80a7-11c751b5948a[39m[22m
+[1m[31mFor help, see: https://nodejs.org/en/docs/inspector[39m[22m
+[1m[31m[39m[22m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +13ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuditModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmCoreModule dependencies initialized[39m[38;5;3m +9ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mOrganizationsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTasksModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/api}:[39m[38;5;3m +2ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/api/auth}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/auth/login, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mUsersController {/api/users}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users/:id, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mTasksController {/api/tasks}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/tasks, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/tasks, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/tasks/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/tasks/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/tasks/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mOrganizationsController {/api/organizations}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/organizations, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/organizations, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/organizations/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/organizations/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/organizations/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuditController {/api/audit-log}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 22928  - [39m02/09/2026, 12:16:36 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/audit-log, GET} route[39m[38;5;3m +0ms[39m
+Checking for existing users...
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mD:\Documents\Projects\Assesments\Turbovets\antigravity-ai-assessment\src\data-source\DataSource.ts:451[39m[22m
+[1m[31m        if (!metadata) throw new EntityMetadataNotFoundError(target)[39m[22m
+[1m[31m                             ^[39m[22m
+[1m[31mEntityMetadataNotFoundError: No metadata for "User" was found.[39m[22m
+[1m[31m    at DataSource.getMetadata (D:\Documents\Projects\Assesments\Turbovets\antigravity-ai-assessment\src\data-source\DataSource.ts:451:30)[39m[22m
+[1m[31m    at Repository.get metadata [as metadata] (D:\Documents\Projects\Assesments\Turbovets\antigravity-ai-assessment\src\repository\Repository.ts:54:40)[39m[22m
+[1m[31m    at Repository.find (D:\Documents\Projects\Assesments\Turbovets\antigravity-ai-assessment\src\repository\Repository.ts:573:39)[39m[22m
+[1m[31m    at UsersService.findAll (D:\Documents\Projects\Assesments\Turbovets\antigravity-ai-assessment\apps\api\src\app\users\users.service.ts:27:33)[39m[22m
+[1m[31m    at AppService.onApplicationBootstrap (D:\Documents\Projects\Assesments\Turbovets\antigravity-ai-assessment\apps\api\src\app\app.service.ts:15:43)[39m[22m
+[1m[31m    at MapIterator.iteratee (D:\Documents\Projects\Assesments\Turbovets\antigravity-ai-assessment\node_modules\@nestjs\core\hooks\on-app-bootstrap.hook.js:22:43)[39m[22m
+[1m[31m    at MapIterator.next (D:\Documents\Projects\Assesments\Turbovets\antigravity-ai-assessment\node_modules\iterare\src\map.ts:9:39)[39m[22m
+[1m[31m    at IteratorWithOperators.next (D:\Documents\Projects\Assesments\Turbovets\antigravity-ai-assessment\node_modules\iterare\src\iterate.ts:19:28)[39m[22m
+[1m[31m    at Array.from (<anonymous>)[39m[22m
+[1m[31m    at IteratorWithOperators.toArray (D:\Documents\Projects\Assesments\Turbovets\antigravity-ai-assessment\node_modules\iterare\src\iterate.ts:227:22)[39m[22m
+[1m[31m[39m[22m
+
+[7m[1m[36m NX [39m[22m[27m [1mProcess exited with code 1, waiting for changes to restart...[22m
+
+
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+
+
+[2m> [22m[2mnx run[22m api:build:development
+
+[2m> [22mwebpack-cli build --node-env=development
+
+webpack compiled [1m[32msuccessfully[39m[22m (346a40818fb7861f)
+
+
+
+[0m[7m[1m[32m NX [39m[22m[27m[0m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+
+
+[1m[31mDebugger listening on ws://localhost:9229/7c002a02-059e-4a27-83ed-c8496841ea4f[39m[22m
+[1m[31mDebugger listening on ws://localhost:9229/7c002a02-059e-4a27-83ed-c8496841ea4f[39m[22m
+[1m[31mFor help, see: https://nodejs.org/en/docs/inspector[39m[22m
+[1m[31m[39m[22m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:09 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:09 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +13ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:09 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:09 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:09 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuditModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmCoreModule dependencies initialized[39m[38;5;3m +955ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mOrganizationsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTasksModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/api}:[39m[38;5;3m +3ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/api/auth}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/auth/login, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mUsersController {/api/users}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users/:id, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mTasksController {/api/tasks}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/tasks, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/tasks, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/tasks/:id, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/tasks/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/tasks/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mOrganizationsController {/api/organizations}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/organizations, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/organizations, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/organizations/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/organizations/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/organizations/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuditController {/api/audit-log}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/audit-log, GET} route[39m[38;5;3m +0ms[39m
+Checking for existing users...
+No users found. Seeding initial data...
+Creating organization "Antigravity"...
+Seeding admin user in organization: Antigravity
+Seeding demo user...
+Data seeded successfully.
+Admin: admin / password
+User: demo / password
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +123ms[39m
+[32m[Nest] 29596  - [39m02/09/2026, 12:17:10 PM [32m    LOG[39m [32m🚀 Application is running on: http://localhost:3000/api[39m
+
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+
+
+[2m> [22m[2mnx run[22m api:build:development
+
+[2m> [22mwebpack-cli build --node-env=development
+
+webpack compiled [1m[32msuccessfully[39m[22m (091cb88d676c4378)
+
+
+
+[0m[7m[1m[32m NX [39m[22m[27m[0m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+
+
+[1m[31mDebugger listening on ws://localhost:9229/5ab9da63-06fd-4304-af74-8ed991bd64e1[39m[22m
+[1m[31mDebugger listening on ws://localhost:9229/5ab9da63-06fd-4304-af74-8ed991bd64e1[39m[22m
+[1m[31mFor help, see: https://nodejs.org/en/docs/inspector[39m[22m
+[1m[31m[39m[22m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +13ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuditModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmCoreModule dependencies initialized[39m[38;5;3m +17ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mOrganizationsModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTasksModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/api}:[39m[38;5;3m +2ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/api/auth}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/auth/login, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mUsersController {/api/users}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users/:id, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mTasksController {/api/tasks}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/tasks, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/tasks, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/tasks/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/tasks/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/tasks/:id, DELETE} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mOrganizationsController {/api/organizations}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/organizations, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/organizations, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/organizations/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/organizations/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/organizations/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuditController {/api/audit-log}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/audit-log, GET} route[39m[38;5;3m +0ms[39m
+Checking for existing users...
+Users already exist. Skipping seed.
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +4ms[39m
+[32m[Nest] 29124  - [39m02/09/2026, 12:17:51 PM [32m    LOG[39m [32m🚀 Application is running on: http://localhost:3000/api[39m
+
+[7m[1m[36m NX [39m[22m[27m [1mProcess exited with code 3221225786, waiting for changes to restart...[22m
+
