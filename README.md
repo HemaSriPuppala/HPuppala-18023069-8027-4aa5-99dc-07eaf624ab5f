@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 Secure Task Management System
+# Secure Task Management System
 
 ### Full-Stack Assessment Project for TurboVets
 
@@ -376,10 +376,6 @@ Login with username and password
 
 ![Dark Mode](./docs/screenshots/dark-mode.png)
 
-### Mobile View
-
-![Mobile](./docs/screenshots/mobile.png)
-
 ---
 
 ## 🧪 Testing
@@ -501,7 +497,7 @@ This project is created for assessment purposes only.
 
 ## 👨‍💻 Author
 
-**Hema Chandra Puppala**
+**Hema Sri Puppala**
 
 - Assessment for: TurboVets
 - Date: February 2026
