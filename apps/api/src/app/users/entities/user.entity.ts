@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, ManyToMany, JoinTable } from 'typeorm';
 import { Organization } from '../../organizations/entities/organization.entity';
 import { Role } from '@antigravity-ai-assessment/data'; // Adjust import if needed, or use local enum
 import { Task } from '../../tasks/entities/task.entity';
@@ -22,4 +22,15 @@ export class User {
 
     @OneToMany(() => Task, (task) => task.user)
     tasks: Task[];
+
+    @ManyToMany(() => User, (user) => user.subordinates)
+    @JoinTable({
+        name: 'user_managers',
+        joinColumn: { name: 'subordinateId', referencedColumnName: 'id' },
+        inverseJoinColumn: { name: 'managerId', referencedColumnName: 'id' }
+    })
+    managers: User[];
+
+    @ManyToMany(() => User, (user) => user.managers)
+    subordinates: User[];
 }

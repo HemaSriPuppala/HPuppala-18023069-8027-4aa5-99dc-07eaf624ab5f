@@ -6640,6 +6640,36 @@
     "type": "static"
   },
   {
+    "source": "npm:@nestjs/config",
+    "target": "npm:@nestjs/common",
+    "type": "static"
+  },
+  {
+    "source": "npm:@nestjs/config",
+    "target": "npm:rxjs",
+    "type": "static"
+  },
+  {
+    "source": "npm:@nestjs/config",
+    "target": "npm:dotenv@17.2.3",
+    "type": "static"
+  },
+  {
+    "source": "npm:@nestjs/config",
+    "target": "npm:dotenv-expand@12.0.3",
+    "type": "static"
+  },
+  {
+    "source": "npm:@nestjs/config",
+    "target": "npm:lodash",
+    "type": "static"
+  },
+  {
+    "source": "npm:dotenv-expand@12.0.3",
+    "target": "npm:dotenv@16.6.1",
+    "type": "static"
+  },
+  {
     "source": "npm:@nestjs/core",
     "target": "npm:@nestjs/common",
     "type": "static"

@@ -5,25 +5,13 @@
       "type": "app",
       "data": {
         "root": "apps/dashboard",
+        "name": "dashboard",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "projectType": "application",
+        "prefix": "app",
+        "sourceRoot": "apps/dashboard/src",
+        "tags": [],
         "targets": {
-          "lint": {
-            "executor": "@nx/eslint:lint",
-            "options": {},
-            "configurations": {},
-            "parallelism": true
-          },
-          "test": {
-            "executor": "@nx/jest:jest",
-            "outputs": [
-              "{workspaceRoot}/coverage/{projectRoot}"
-            ],
-            "options": {
-              "jestConfig": "apps/dashboard/jest.config.cts",
-              "tsConfig": "apps/dashboard/tsconfig.spec.json"
-            },
-            "configurations": {},
-            "parallelism": true
-          },
           "build": {
             "executor": "@angular/build:application",
             "outputs": [
@@ -91,6 +79,24 @@
             "options": {},
             "parallelism": true
           },
+          "lint": {
+            "executor": "@nx/eslint:lint",
+            "configurations": {},
+            "options": {},
+            "parallelism": true
+          },
+          "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "apps/dashboard/jest.config.cts",
+              "tsConfig": "apps/dashboard/tsconfig.spec.json"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
           "serve-static": {
             "continuous": true,
             "executor": "@nx/web:file-server",
@@ -103,12 +109,6 @@
             "parallelism": true
           }
         },
-        "name": "dashboard",
-        "$schema": "../../node_modules/nx/schemas/project-schema.json",
-        "projectType": "application",
-        "prefix": "app",
-        "sourceRoot": "apps/dashboard/src",
-        "tags": [],
         "implicitDependencies": []
       }
     },
@@ -117,52 +117,12 @@
       "type": "lib",
       "data": {
         "root": "libs/auth",
-        "targets": {
-          "lint": {
-            "cache": true,
-            "options": {
-              "cwd": "libs/auth",
-              "command": "eslint ."
-            },
-            "inputs": [
-              "default",
-              "^default",
-              "{workspaceRoot}/eslint.config.mjs",
-              "{workspaceRoot}/libs/auth/eslint.config.mjs",
-              "{workspaceRoot}/tools/eslint-rules/**/*",
-              {
-                "externalDependencies": [
-                  "eslint"
-                ]
-              }
-            ],
-            "outputs": [
-              "{options.outputFile}"
-            ],
-            "metadata": {
-              "technologies": [
-                "eslint"
-              ],
-              "description": "Runs ESLint on project",
-              "help": {
-                "command": "npx eslint --help",
-                "example": {
-                  "options": {
-                    "max-warnings": 0
-                  }
-                }
-              }
-            },
-            "executor": "nx:run-commands",
-            "configurations": {},
-            "parallelism": true
-          }
-        },
         "name": "auth",
         "$schema": "../../node_modules/nx/schemas/project-schema.json",
         "sourceRoot": "libs/auth/src",
         "projectType": "library",
         "tags": [],
+        "targets": {},
         "implicitDependencies": []
       }
     },
@@ -171,52 +131,12 @@
       "type": "lib",
       "data": {
         "root": "libs/data",
-        "targets": {
-          "lint": {
-            "cache": true,
-            "options": {
-              "cwd": "libs/data",
-              "command": "eslint ."
-            },
-            "inputs": [
-              "default",
-              "^default",
-              "{workspaceRoot}/eslint.config.mjs",
-              "{workspaceRoot}/libs/data/eslint.config.mjs",
-              "{workspaceRoot}/tools/eslint-rules/**/*",
-              {
-                "externalDependencies": [
-                  "eslint"
-                ]
-              }
-            ],
-            "outputs": [
-              "{options.outputFile}"
-            ],
-            "metadata": {
-              "technologies": [
-                "eslint"
-              ],
-              "description": "Runs ESLint on project",
-              "help": {
-                "command": "npx eslint --help",
-                "example": {
-                  "options": {
-                    "max-warnings": 0
-                  }
-                }
-              }
-            },
-            "executor": "nx:run-commands",
-            "configurations": {},
-            "parallelism": true
-          }
-        },
         "name": "data",
         "$schema": "../../node_modules/nx/schemas/project-schema.json",
         "sourceRoot": "libs/data/src",
         "projectType": "library",
         "tags": [],
+        "targets": {},
         "implicitDependencies": []
       }
     },
@@ -225,50 +145,20 @@
       "type": "app",
       "data": {
         "root": "apps/api",
+        "name": "api",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "apps/api/src",
         "projectType": "application",
-        "metadata": {},
+        "tags": [],
         "targets": {
           "build": {
-            "cache": true,
-            "dependsOn": [
-              "^build"
-            ],
-            "inputs": [
-              "production",
-              "^production",
-              {
-                "externalDependencies": [
-                  "webpack-cli"
-                ]
-              }
-            ],
-            "outputs": [
-              "{workspaceRoot}/dist\\apps\\api"
-            ],
-            "metadata": {
-              "technologies": [
-                "webpack"
-              ],
-              "description": "Runs Webpack build",
-              "help": {
-                "command": "npx webpack-cli build --help",
-                "example": {
-                  "options": {
-                    "json": "stats.json"
-                  },
-                  "args": [
-                    "--profile"
-                  ]
-                }
-              }
-            },
             "executor": "nx:run-commands",
             "options": {
-              "cwd": "apps/api",
+              "command": "webpack-cli build",
               "args": [
                 "--node-env=production"
               ],
-              "command": "webpack-cli build"
+              "cwd": "apps/api"
             },
             "configurations": {
               "development": {
@@ -277,171 +167,6 @@
                 ]
               }
             },
-            "parallelism": true
-          },
-          "serve": {
-            "continuous": true,
-            "executor": "@nx/js:node",
-            "defaultConfiguration": "development",
-            "dependsOn": [
-              "build"
-            ],
-            "options": {
-              "buildTarget": "api:build",
-              "runBuildTargetDependencies": false
-            },
-            "configurations": {
-              "development": {
-                "buildTarget": "api:build:development"
-              },
-              "production": {
-                "buildTarget": "api:build:production"
-              }
-            },
-            "parallelism": true
-          },
-          "preview": {
-            "continuous": true,
-            "options": {
-              "cwd": "apps/api",
-              "args": [
-                "--node-env=production"
-              ],
-              "command": "webpack-cli serve"
-            },
-            "metadata": {
-              "technologies": [
-                "webpack"
-              ],
-              "description": "Starts Webpack dev server in production mode",
-              "help": {
-                "command": "npx webpack-cli serve --help",
-                "example": {
-                  "options": {
-                    "args": [
-                      "--client-progress",
-                      "--history-api-fallback "
-                    ]
-                  }
-                }
-              }
-            },
-            "executor": "nx:run-commands",
-            "configurations": {},
-            "parallelism": true
-          },
-          "serve-static": {
-            "continuous": true,
-            "dependsOn": [
-              "build"
-            ],
-            "executor": "@nx/web:file-server",
-            "options": {
-              "buildTarget": "build",
-              "spa": true
-            },
-            "configurations": {},
-            "parallelism": true
-          },
-          "build-deps": {
-            "dependsOn": [
-              "^build"
-            ],
-            "configurations": {},
-            "options": {},
-            "parallelism": true,
-            "executor": "nx:noop"
-          },
-          "watch-deps": {
-            "continuous": true,
-            "dependsOn": [
-              "build-deps"
-            ],
-            "executor": "nx:run-commands",
-            "options": {
-              "command": "npx nx watch --projects api --includeDependentProjects -- npx nx build-deps api"
-            },
-            "configurations": {},
-            "parallelism": true
-          },
-          "lint": {
-            "cache": true,
-            "options": {
-              "cwd": "apps/api",
-              "command": "eslint ."
-            },
-            "inputs": [
-              "default",
-              "^default",
-              "{workspaceRoot}/eslint.config.mjs",
-              "{workspaceRoot}/apps/api/eslint.config.mjs",
-              "{workspaceRoot}/tools/eslint-rules/**/*",
-              {
-                "externalDependencies": [
-                  "eslint"
-                ]
-              }
-            ],
-            "outputs": [
-              "{options.outputFile}"
-            ],
-            "metadata": {
-              "technologies": [
-                "eslint"
-              ],
-              "description": "Runs ESLint on project",
-              "help": {
-                "command": "npx eslint --help",
-                "example": {
-                  "options": {
-                    "max-warnings": 0
-                  }
-                }
-              }
-            },
-            "executor": "nx:run-commands",
-            "configurations": {},
-            "parallelism": true
-          },
-          "test": {
-            "metadata": {
-              "technologies": [
-                "jest"
-              ],
-              "description": "Run Jest Tests",
-              "help": {
-                "command": "npx jest --help",
-                "example": {
-                  "options": {
-                    "coverage": true
-                  }
-                }
-              }
-            },
-            "cache": true,
-            "inputs": [
-              "default",
-              "^production",
-              "{workspaceRoot}\\jest.preset.js",
-              {
-                "externalDependencies": [
-                  "jest"
-                ]
-              }
-            ],
-            "outputs": [
-              "{workspaceRoot}\\coverage\\apps\\api"
-            ],
-            "executor": "nx:run-commands",
-            "options": {
-              "cwd": "apps/api",
-              "env": {
-                "TS_NODE_COMPILER_OPTIONS": "{\"moduleResolution\":\"node10\",\"module\":\"commonjs\",\"customConditions\":null}"
-              },
-              "command": "jest",
-              "passWithNoTests": true
-            },
-            "configurations": {},
             "parallelism": true
           },
           "prune-lockfile": {
@@ -484,12 +209,29 @@
             "configurations": {},
             "options": {},
             "parallelism": true
+          },
+          "serve": {
+            "continuous": true,
+            "executor": "@nx/js:node",
+            "defaultConfiguration": "development",
+            "dependsOn": [
+              "build"
+            ],
+            "options": {
+              "buildTarget": "api:build",
+              "runBuildTargetDependencies": false
+            },
+            "configurations": {
+              "development": {
+                "buildTarget": "api:build:development"
+              },
+              "production": {
+                "buildTarget": "api:build:production"
+              }
+            },
+            "parallelism": true
           }
         },
-        "name": "api",
-        "$schema": "../../node_modules/nx/schemas/project-schema.json",
-        "sourceRoot": "apps/api/src",
-        "tags": [],
         "implicitDependencies": []
       }
     }
@@ -5209,6 +4951,60 @@
         "version": "11.1.13",
         "packageName": "@nestjs/common",
         "hash": "sha512-ieqWtipT+VlyDWLz5Rvz0f3E5rXcVAnaAi+D53DEHLjc1kmFxCgZ62qVfTX2vwkywwqNkTNXvBgGR72hYqV//Q=="
+      }
+    },
+    "npm:@nestjs/config": {
+      "type": "npm",
+      "name": "npm:@nestjs/config",
+      "data": {
+        "version": "4.0.3",
+        "packageName": "@nestjs/config",
+        "hash": "sha512-FQ3M3Ohqfl+nHAn5tp7++wUQw0f2nAk+SFKe8EpNRnIifPqvfJP6JQxPKtFLMOHbyer4X646prFG4zSRYEssQQ=="
+      }
+    },
+    "npm:dotenv@17.2.3": {
+      "type": "npm",
+      "name": "npm:dotenv@17.2.3",
+      "data": {
+        "version": "17.2.3",
+        "packageName": "dotenv",
+        "hash": "sha512-JVUnt+DUIzu87TABbhPmNfVdBDt18BLOWjMUFJMSi/Qqg7NTYtabbvSNJGOJ7afbRuv9D/lngizHtP7QyLQ+9w=="
+      }
+    },
+    "npm:dotenv@16.6.1": {
+      "type": "npm",
+      "name": "npm:dotenv@16.6.1",
+      "data": {
+        "version": "16.6.1",
+        "packageName": "dotenv",
+        "hash": "sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow=="
+      }
+    },
+    "npm:dotenv": {
+      "type": "npm",
+      "name": "npm:dotenv",
+      "data": {
+        "version": "16.4.7",
+        "packageName": "dotenv",
+        "hash": "sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ=="
+      }
+    },
+    "npm:dotenv-expand@12.0.3": {
+      "type": "npm",
+      "name": "npm:dotenv-expand@12.0.3",
+      "data": {
+        "version": "12.0.3",
+        "packageName": "dotenv-expand",
+        "hash": "sha512-uc47g4b+4k/M/SeaW1y4OApx+mtLWl92l5LMPP0GNXctZqELk+YGgOPIIC5elYmUH4OuoK3JLhuRUYegeySiFA=="
+      }
+    },
+    "npm:dotenv-expand": {
+      "type": "npm",
+      "name": "npm:dotenv-expand",
+      "data": {
+        "version": "11.0.7",
+        "packageName": "dotenv-expand",
+        "hash": "sha512-zIHwmZPRshsCdpMDyVsqGmgyP0yT8GAgXUnkdAoJisxvf33k7yO6OuoKmcTGuXPWSsm8Oh88nZicRLA9Y0rUeA=="
       }
     },
     "npm:@nestjs/core": {
@@ -10134,33 +9930,6 @@
         "hash": "sha512-6kZKyUajlDuqlHKVX1w7gyslj9MPIXzIFiz/rGu35uC1wMi+kMhQwGhl4lt9unC9Vb9INnY9Z3/ZA3+FhASLaw=="
       }
     },
-    "npm:dotenv": {
-      "type": "npm",
-      "name": "npm:dotenv",
-      "data": {
-        "version": "16.4.7",
-        "packageName": "dotenv",
-        "hash": "sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ=="
-      }
-    },
-    "npm:dotenv@16.6.1": {
-      "type": "npm",
-      "name": "npm:dotenv@16.6.1",
-      "data": {
-        "version": "16.6.1",
-        "packageName": "dotenv",
-        "hash": "sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow=="
-      }
-    },
-    "npm:dotenv-expand": {
-      "type": "npm",
-      "name": "npm:dotenv-expand",
-      "data": {
-        "version": "11.0.7",
-        "packageName": "dotenv-expand",
-        "hash": "sha512-zIHwmZPRshsCdpMDyVsqGmgyP0yT8GAgXUnkdAoJisxvf33k7yO6OuoKmcTGuXPWSsm8Oh88nZicRLA9Y0rUeA=="
-      }
-    },
     "npm:dunder-proto": {
       "type": "npm",
       "name": "npm:dunder-proto",
@@ -12931,6 +12700,15 @@
         "version": "2.0.4",
         "packageName": "loader-utils",
         "hash": "sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw=="
+      }
+    },
+    "npm:lodash": {
+      "type": "npm",
+      "name": "npm:lodash",
+      "data": {
+        "version": "4.17.23",
+        "packageName": "lodash",
+        "hash": "sha512-LgVTMpQtIopCi79SJeDiP0TfWi5CNEc/L/aRdTh3yIvmZXTnheWpKjSZhnvMl8iXbC1tFg9gdHHDMLoV7CnG+w=="
       }
     },
     "npm:lodash.clonedeepwith": {
@@ -16912,6 +16690,11 @@
       {
         "source": "api",
         "target": "npm:@nestjs/common",
+        "type": "static"
+      },
+      {
+        "source": "api",
+        "target": "npm:@nestjs/config",
         "type": "static"
       },
       {
@@ -23961,6 +23744,40 @@
       {
         "source": "npm:@nestjs/common",
         "target": "npm:uid",
+        "type": "static"
+      }
+    ],
+    "npm:@nestjs/config": [
+      {
+        "source": "npm:@nestjs/config",
+        "target": "npm:@nestjs/common",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/config",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/config",
+        "target": "npm:dotenv@17.2.3",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/config",
+        "target": "npm:dotenv-expand@12.0.3",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/config",
+        "target": "npm:lodash",
+        "type": "static"
+      }
+    ],
+    "npm:dotenv-expand@12.0.3": [
+      {
+        "source": "npm:dotenv-expand@12.0.3",
+        "target": "npm:dotenv@16.6.1",
         "type": "static"
       }
     ],
@@ -39642,6 +39459,40 @@
     ]
   },
   "version": "6.0",
-  "errors": [],
-  "computedAt": 1770688846828
+  "errors": [
+    {
+      "errors": [
+        [
+          null,
+          {}
+        ]
+      ],
+      "partialResults": [],
+      "name": "AggregateCreateNodesError",
+      "pluginIndex": 0
+    },
+    {
+      "errors": [
+        [
+          null,
+          {}
+        ]
+      ],
+      "partialResults": [],
+      "name": "AggregateCreateNodesError",
+      "pluginIndex": 1
+    },
+    {
+      "errors": [
+        [
+          null,
+          {}
+        ]
+      ],
+      "partialResults": [],
+      "name": "AggregateCreateNodesError",
+      "pluginIndex": 2
+    }
+  ],
+  "computedAt": 1770697702738
 }

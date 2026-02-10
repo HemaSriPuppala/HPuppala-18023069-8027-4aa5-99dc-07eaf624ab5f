@@ -7,32 +7,65 @@ import { Task } from './entities/task.entity';
 import { User } from '../users/entities/user.entity';
 import { Role } from '@antigravity-ai-assessment/data';
 
+import { UsersService } from '../users/users.service';
+
 @Injectable()
 export class TasksService {
   constructor(
     @InjectRepository(Task)
     private tasksRepository: Repository<Task>,
+    private usersService: UsersService,
   ) { }
 
-  create(createTaskDto: CreateTaskDto, user: User) {
+  async create(createTaskDto: CreateTaskDto, user: User) {
+    let assignedUser = user;
+
+    if (createTaskDto.assigneeId && (user.role === Role.ADMIN || user.role === Role.OWNER)) {
+      const assignee = await this.usersService.findOne(createTaskDto.assigneeId);
+      if (assignee) {
+        assignedUser = assignee;
+      }
+    }
+
     const task = this.tasksRepository.create({
       ...createTaskDto,
-      user,
+      user: assignedUser,
     });
     return this.tasksRepository.save(task);
   }
 
-  findAll(user: User) {
-    return this.tasksRepository.find({
-      where: {
-        user: {
-          organization: {
-            id: user.organization?.id, // Filter by organization
-          },
-        },
-      },
-      relations: ['user'], // Eager load user for display
-    });
+  async findAll(user: User) {
+    if (user.role === Role.OWNER) {
+        return this.tasksRepository.find({ relations: ['user'] });
+    }
+
+    if (user.role === Role.ADMIN) {
+        return this.tasksRepository.find({
+            where: [
+                { user: { id: user.id } }, 
+                { user: { managers: { id: user.id } } } 
+            ],
+            relations: ['user']
+        });
+    }
+
+    if (user.role === Role.VIEWER) {
+        const fullUser = await this.usersService.findOne(user.id);
+        const where: any[] = [{ user: { id: user.id } }];
+        
+        if (fullUser?.managers?.length) {
+             fullUser.managers.forEach(m => {
+                 where.push({ user: { id: m.id } });
+             });
+        }
+        
+        return this.tasksRepository.find({
+            where: where,
+            relations: ['user']
+        });
+    }
+    
+    return [];
   }
 
   async findOne(id: string, user: User) {
@@ -43,7 +76,8 @@ export class TasksService {
     if (!task) throw new NotFoundException('Task not found');
 
     // Check organization access
-    if (task.user.organization.id !== user.organization.id && user.role !== Role.OWNER) {
+    // Check organization access
+    if (task.user.organization?.id && user.organization?.id && task.user.organization.id !== user.organization.id && user.role !== Role.OWNER) {
       throw new ForbiddenException('Access denied');
     }
     return task;

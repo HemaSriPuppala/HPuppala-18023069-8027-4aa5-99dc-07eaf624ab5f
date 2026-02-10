@@ -1,0 +1,153 @@
+<div class="p-6 h-full flex flex-col dark:bg-slate-900/50">
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-white">Team Members</h2>
+        
+        <!-- Action Buttons -->
+        <div class="flex space-x-4">
+            <button class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition"
+                (click)="loadTeam()">
+                Refresh
+            </button>
+            <button *ngIf="authService.currentUserValue?.role !== Role.VIEWER" 
+                (click)="openCreateModal()"
+                class="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 transition flex items-center gap-2">
+                <span>Add Member</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Content Area -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Admins Column (Visible to Owner & Viewers) -->
+        <div *ngIf="authService.currentUserValue?.role !== Role.ADMIN" class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 p-6">
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
+                <span class="w-2 h-2 rounded-full bg-purple-500 mr-2"></span>
+                Admins
+                <span class="ml-2 px-2 py-0.5 bg-purple-100 text-purple-700 text-xs rounded-full">{{ admins.length }}</span>
+            </h3>
+            
+            <div class="space-y-3">
+                <div *ngFor="let user of admins" class="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold">
+                            {{ user.username.charAt(0).toUpperCase() }}
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-900 dark:text-white">{{ user.username }}</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Project Manager</p>
+                        </div>
+                    </div>
+                    <button *ngIf="authService.currentUserValue?.role === Role.OWNER" 
+                        (click)="deleteUser(user.id)"
+                        class="text-gray-400 hover:text-red-500 transition p-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                    </button>
+                </div>
+                <div *ngIf="admins.length === 0" class="text-center py-8 text-gray-400 dark:text-slate-500">
+                    No admins found.
+                </div>
+            </div>
+        </div>
+
+        <!-- Viewers Column -->
+        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 p-6">
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
+                <span class="w-2 h-2 rounded-full bg-blue-500 mr-2"></span>
+                Team Members (Viewers)
+                <span class="ml-2 px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded-full">{{ viewers.length }}</span>
+            </h3>
+
+            <div class="space-y-3">
+                <div *ngFor="let user of viewers" class="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold">
+                            {{ user.username.charAt(0).toUpperCase() }}
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-900 dark:text-white">{{ user.username }}</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Team Member</p>
+                        </div>
+                    </div>
+                    <button *ngIf="authService.currentUserValue?.role !== Role.VIEWER" 
+                        (click)="deleteUser(user.id)"
+                        class="text-gray-400 hover:text-red-500 transition p-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                    </button>
+                </div>
+                <div *ngIf="viewers.length === 0" class="text-center py-8 text-gray-400 dark:text-slate-500">
+                    No team members found.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Create User Modal -->
+    <div *ngIf="showModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-4">
+        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl w-full max-w-md p-6 transform transition-all scale-100 border border-slate-200 dark:border-slate-700">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold text-gray-800 dark:text-white">Add New Member</h3>
+                <button (click)="closeCreateModal()" class="text-gray-400 hover:text-gray-600 dark:hover:text-slate-200">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <form [formGroup]="createUserForm" (ngSubmit)="submitForm()">
+                
+                <!-- Admin View: Select User -->
+                <div *ngIf="authService.currentUserValue?.role === Role.ADMIN" class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Select User to Add</label>
+                    <select formControlName="userId"
+                        class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition">
+                        <option value="">-- Select a User --</option>
+                        <option *ngFor="let user of availableUsers" [value]="user.id">
+                            {{ user.username }} ({{ user.role }})
+                        </option>
+                    </select>
+                    <p *ngIf="availableUsers.length === 0" class="text-xs text-orange-500 mt-1">No available viewers found to add.</p>
+                </div>
+
+                <!-- Owner View: Create Inputs -->
+                <ng-container *ngIf="authService.currentUserValue?.role === Role.OWNER">
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Username</label>
+                        <input type="text" formControlName="username"
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
+                            placeholder="Enter username">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Password</label>
+                        <input type="password" formControlName="password"
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
+                            placeholder="Enter password">
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Role</label>
+                        <select formControlName="role"
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition">
+                            <option [value]="Role.ADMIN">Admin (Manager)</option>
+                            <option [value]="Role.VIEWER">Viewer (Team Member)</option>
+                        </select>
+                    </div>
+                </ng-container>
+
+                <div class="flex justify-end space-x-3">
+                    <button type="button" (click)="closeCreateModal()"
+                        class="px-4 py-2 rounded-lg text-gray-600 dark:text-slate-400 hover:bg-gray-100 dark:hover:bg-slate-700 transition">Cancel</button>
+                    <button type="submit" [disabled]="!createUserForm.valid"
+                        class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-indigo-500/30">
+                        Add Member
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

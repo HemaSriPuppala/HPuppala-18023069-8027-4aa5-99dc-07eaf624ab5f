@@ -8,6 +8,9 @@ import { HasRoleDirective } from '../../core/directives/has-role.directive';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Role } from '@antigravity-ai-assessment/data';
 
+import { UserService } from '../../core/services/user.service';
+import { User } from '@antigravity-ai-assessment/data';
+
 @Component({
     selector: 'app-task-board',
     standalone: true,
@@ -31,19 +34,45 @@ export class TaskBoardComponent implements OnInit {
     openTasks: Task[] = [];
     inProgressTasks: Task[] = [];
     doneTasks: Task[] = [];
+    users: User[] = [];
     showModal = false;
     createTaskForm: FormGroup;
     Role = Role; // Expose Role enum for template
 
-    constructor(private taskService: TaskService, public authService: AuthService, private fb: FormBuilder) {
+    constructor(
+        private taskService: TaskService, 
+        public authService: AuthService, 
+        private fb: FormBuilder,
+        private userService: UserService
+    ) {
         this.createTaskForm = this.fb.group({
             title: ['', Validators.required],
-            description: ['', Validators.required]
+            description: ['', Validators.required],
+            assigneeId: ['']
         });
     }
 
     ngOnInit() {
         this.loadTasks();
+        this.loadUsers();
+    }
+
+    loadUsers() {
+        const currentUser = this.authService.currentUserValue;
+        if (currentUser?.role === Role.ADMIN || currentUser?.role === Role.OWNER) {
+            this.userService.getAll().subscribe(users => {
+                const myId = currentUser.id;
+                
+                if (currentUser.role === Role.OWNER) {
+                    // Owner can see everyone (Admins and Viewers)
+                    // Probably exclude only system/root if any, but showing all is fine.
+                    this.users = users;
+                } else if (currentUser.role === Role.ADMIN) {
+                    // Admin can see THEMSELVES and THEIR SUBORDINATES only.
+                    this.users = users.filter(u => u.id === myId || (u as any).managers?.some((m: User) => m.id === myId));
+                }
+            });
+        }
     }
 
     loadTasks() {

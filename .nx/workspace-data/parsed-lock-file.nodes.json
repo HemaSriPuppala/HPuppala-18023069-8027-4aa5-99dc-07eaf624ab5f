@@ -4716,6 +4716,60 @@
         "hash": "sha512-ieqWtipT+VlyDWLz5Rvz0f3E5rXcVAnaAi+D53DEHLjc1kmFxCgZ62qVfTX2vwkywwqNkTNXvBgGR72hYqV//Q=="
       }
     },
+    "npm:@nestjs/config": {
+      "type": "npm",
+      "name": "npm:@nestjs/config",
+      "data": {
+        "version": "4.0.3",
+        "packageName": "@nestjs/config",
+        "hash": "sha512-FQ3M3Ohqfl+nHAn5tp7++wUQw0f2nAk+SFKe8EpNRnIifPqvfJP6JQxPKtFLMOHbyer4X646prFG4zSRYEssQQ=="
+      }
+    },
+    "npm:dotenv@17.2.3": {
+      "type": "npm",
+      "name": "npm:dotenv@17.2.3",
+      "data": {
+        "version": "17.2.3",
+        "packageName": "dotenv",
+        "hash": "sha512-JVUnt+DUIzu87TABbhPmNfVdBDt18BLOWjMUFJMSi/Qqg7NTYtabbvSNJGOJ7afbRuv9D/lngizHtP7QyLQ+9w=="
+      }
+    },
+    "npm:dotenv@16.6.1": {
+      "type": "npm",
+      "name": "npm:dotenv@16.6.1",
+      "data": {
+        "version": "16.6.1",
+        "packageName": "dotenv",
+        "hash": "sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow=="
+      }
+    },
+    "npm:dotenv": {
+      "type": "npm",
+      "name": "npm:dotenv",
+      "data": {
+        "version": "16.4.7",
+        "packageName": "dotenv",
+        "hash": "sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ=="
+      }
+    },
+    "npm:dotenv-expand@12.0.3": {
+      "type": "npm",
+      "name": "npm:dotenv-expand@12.0.3",
+      "data": {
+        "version": "12.0.3",
+        "packageName": "dotenv-expand",
+        "hash": "sha512-uc47g4b+4k/M/SeaW1y4OApx+mtLWl92l5LMPP0GNXctZqELk+YGgOPIIC5elYmUH4OuoK3JLhuRUYegeySiFA=="
+      }
+    },
+    "npm:dotenv-expand": {
+      "type": "npm",
+      "name": "npm:dotenv-expand",
+      "data": {
+        "version": "11.0.7",
+        "packageName": "dotenv-expand",
+        "hash": "sha512-zIHwmZPRshsCdpMDyVsqGmgyP0yT8GAgXUnkdAoJisxvf33k7yO6OuoKmcTGuXPWSsm8Oh88nZicRLA9Y0rUeA=="
+      }
+    },
     "npm:@nestjs/core": {
       "type": "npm",
       "name": "npm:@nestjs/core",
@@ -9639,33 +9693,6 @@
         "hash": "sha512-6kZKyUajlDuqlHKVX1w7gyslj9MPIXzIFiz/rGu35uC1wMi+kMhQwGhl4lt9unC9Vb9INnY9Z3/ZA3+FhASLaw=="
       }
     },
-    "npm:dotenv": {
-      "type": "npm",
-      "name": "npm:dotenv",
-      "data": {
-        "version": "16.4.7",
-        "packageName": "dotenv",
-        "hash": "sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ=="
-      }
-    },
-    "npm:dotenv@16.6.1": {
-      "type": "npm",
-      "name": "npm:dotenv@16.6.1",
-      "data": {
-        "version": "16.6.1",
-        "packageName": "dotenv",
-        "hash": "sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow=="
-      }
-    },
-    "npm:dotenv-expand": {
-      "type": "npm",
-      "name": "npm:dotenv-expand",
-      "data": {
-        "version": "11.0.7",
-        "packageName": "dotenv-expand",
-        "hash": "sha512-zIHwmZPRshsCdpMDyVsqGmgyP0yT8GAgXUnkdAoJisxvf33k7yO6OuoKmcTGuXPWSsm8Oh88nZicRLA9Y0rUeA=="
-      }
-    },
     "npm:dunder-proto": {
       "type": "npm",
       "name": "npm:dunder-proto",
@@ -12436,6 +12463,15 @@
         "version": "2.0.4",
         "packageName": "loader-utils",
         "hash": "sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw=="
+      }
+    },
+    "npm:lodash": {
+      "type": "npm",
+      "name": "npm:lodash",
+      "data": {
+        "version": "4.17.23",
+        "packageName": "lodash",
+        "hash": "sha512-LgVTMpQtIopCi79SJeDiP0TfWi5CNEc/L/aRdTh3yIvmZXTnheWpKjSZhnvMl8iXbC1tFg9gdHHDMLoV7CnG+w=="
       }
     },
     "npm:lodash.clonedeepwith": {
@@ -16790,6 +16826,10 @@
     "node_modules/@napi-rs/nice-win32-x64-msvc": "npm:@napi-rs/nice-win32-x64-msvc",
     "node_modules/@napi-rs/wasm-runtime": "npm:@napi-rs/wasm-runtime",
     "node_modules/@nestjs/common": "npm:@nestjs/common",
+    "node_modules/@nestjs/config": "npm:@nestjs/config",
+    "node_modules/@nestjs/config/node_modules/dotenv": "npm:dotenv@17.2.3",
+    "node_modules/@nestjs/config/node_modules/dotenv-expand": "npm:dotenv-expand@12.0.3",
+    "node_modules/@nestjs/config/node_modules/dotenv-expand/node_modules/dotenv": "npm:dotenv@16.6.1",
     "node_modules/@nestjs/core": "npm:@nestjs/core",
     "node_modules/@nestjs/core/node_modules/path-to-regexp": "npm:path-to-regexp@8.3.0",
     "node_modules/@nestjs/jwt": "npm:@nestjs/jwt",
@@ -17755,6 +17795,7 @@
     "node_modules/loader-runner": "npm:loader-runner",
     "node_modules/loader-utils": "npm:loader-utils",
     "node_modules/locate-path": "npm:locate-path",
+    "node_modules/lodash": "npm:lodash",
     "node_modules/lodash.clonedeepwith": "npm:lodash.clonedeepwith",
     "node_modules/lodash.debounce": "npm:lodash.debounce",
     "node_modules/lodash.includes": "npm:lodash.includes",

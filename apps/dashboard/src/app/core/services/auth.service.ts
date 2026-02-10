@@ -45,6 +45,25 @@ export class AuthService {
             }));
     }
 
+    register(user: any): Observable<User> {
+        return this.http.post<LoginResponse>(`http://localhost:3000/api/auth/register`, user)
+            .pipe(map(response => {
+                const token = response.access_token;
+                const decodedToken: any = jwtDecode(token);
+                
+                const userObj: User = {
+                    id: decodedToken.sub,
+                    username: decodedToken.username,
+                    role: decodedToken.role,
+                };
+                
+                localStorage.setItem('currentUser', JSON.stringify(userObj));
+                localStorage.setItem('token', token);
+                this.currentUserSubject.next(userObj);
+                return userObj;
+            }));
+    }
+
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
