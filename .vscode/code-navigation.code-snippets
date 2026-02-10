@@ -1,0 +1,79 @@
+{
+  "// Architecture Overview": {
+    "prefix": "snippet: arch",
+    "body": [],
+    "description": "Jump to project structure"
+  },
+  
+  "// Backend Modules": {
+    "prefix": "backend-modules",
+    "body": [],
+    "description": "Navigate to: apps/api/src"
+  },
+  
+  "// Auth Service": {
+    "prefix": "auth-service",
+    "body": [],
+    "description": "Navigate to: apps/api/src/auth/auth.service.ts:15"
+  },
+  
+  "// Roles Guard": {
+    "prefix": "roles-guard",
+    "body": [],
+    "description": "Navigate to: apps/api/src/auth/roles.guard.ts:10"
+  },
+  
+  "// Task Controller": {
+    "prefix": "task-controller",
+    "body": [],
+    "description": "Navigate to: apps/api/src/tasks/tasks.controller.ts:1"
+  },
+  
+  "// Task Service": {
+    "prefix": "task-service",
+    "body": [],
+    "description": "Navigate to: apps/api/src/tasks/tasks.service.ts:10"
+  },
+  
+  "// Task Entity": {
+    "prefix": "task-entity",
+    "body": [],
+    "description": "Navigate to: apps/api/src/tasks/task.entity.ts:1"
+  },
+  
+  "// Frontend Auth Service": {
+    "prefix": "auth-service-frontend",
+    "body": [],
+    "description": "Navigate to: apps/dashboard/src/app/core/services/auth.service.ts:15"
+  },
+  
+  "// JWT Interceptor": {
+    "prefix": "jwt-interceptor",
+    "body": [],
+    "description": "Navigate to: apps/dashboard/src/app/core/interceptors/jwt.interceptor.ts:10"
+  },
+  
+  "// Task Board Component": {
+    "prefix": "task-board-component",
+    "body": [],
+    "description": "Navigate to: apps/dashboard/src/app/pages/tasks/task-board.component.ts:30"
+  },
+  
+  "// Drag and Drop": {
+    "prefix": "drag-drop",
+    "body": [],
+    "description": "Navigate to: apps/dashboard/src/app/pages/tasks/task-board.component.ts:80"
+  },
+  
+  "// Has Role Directive": {
+    "prefix": "has-role-directive",
+    "body": [],
+    "description": "Navigate to: apps/dashboard/src/app/core/directives/has-role.directive.ts:1"
+  },
+  
+  "// Task Board Template": {
+    "prefix": "task-board-template",
+    "body": [],
+    "description": "Navigate to: apps/dashboard/src/app/pages/tasks/task-board.component.html:50"
+  }
+}

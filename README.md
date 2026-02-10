@@ -11,7 +11,7 @@
 
 _A modern, secure, role-based task management system with a beautiful UI and robust backend_
 
-[Features](#-features) • [Quick Start](#-quick-start) • [Architecture](#-architecture) • [API Documentation](#-api-documentation) • [Screenshots](#-screenshots)
+[Features](#features) • [Quick Start](#quick-start) • [Architecture](#architecture) • [API Documentation](#api-documentation) • [Screenshots](#screenshots)
 
 </div>
 
@@ -19,20 +19,20 @@ _A modern, secure, role-based task management system with a beautiful UI and rob
 
 ## Table of Contents
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Technology Stack](#-technology-stack)
-- [Prerequisites](#-prerequisites)
-- [Quick Start](#-quick-start)
-- [Architecture](#-architecture)
-- [Database Schema](#-database-schema)
-- [API Documentation](#-api-documentation)
-- [User Roles & Permissions](#-user-roles--permissions)
-- [Screenshots](#-screenshots)
-- [Testing](#-testing)
-- [Project Structure](#-project-structure)
-- [Security](#-security)
-- [Contributing](#-contributing)
+- [Overview](#overview)
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Prerequisites](#prerequisites)
+- [Quick Start](#quick-start)
+- [Architecture](#architecture)
+- [Database Schema](#database-schema)
+- [API Documentation](#api-documentation)
+- [User Roles & Permissions](#user-roles--permissions)
+- [Screenshots](#screenshots)
+- [Testing](#testing)
+- [Project Structure](#project-structure)
+- [Security](#security)
+- [Contributing](#contributing)
 
 ---
 

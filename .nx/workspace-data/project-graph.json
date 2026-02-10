@@ -5,13 +5,25 @@
       "type": "app",
       "data": {
         "root": "apps/dashboard",
-        "name": "dashboard",
-        "$schema": "../../node_modules/nx/schemas/project-schema.json",
-        "projectType": "application",
-        "prefix": "app",
-        "sourceRoot": "apps/dashboard/src",
-        "tags": [],
         "targets": {
+          "lint": {
+            "executor": "@nx/eslint:lint",
+            "options": {},
+            "configurations": {},
+            "parallelism": true
+          },
+          "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "apps/dashboard/jest.config.cts",
+              "tsConfig": "apps/dashboard/tsconfig.spec.json"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
           "build": {
             "executor": "@angular/build:application",
             "outputs": [
@@ -79,24 +91,6 @@
             "options": {},
             "parallelism": true
           },
-          "lint": {
-            "executor": "@nx/eslint:lint",
-            "configurations": {},
-            "options": {},
-            "parallelism": true
-          },
-          "test": {
-            "executor": "@nx/jest:jest",
-            "outputs": [
-              "{workspaceRoot}/coverage/{projectRoot}"
-            ],
-            "options": {
-              "jestConfig": "apps/dashboard/jest.config.cts",
-              "tsConfig": "apps/dashboard/tsconfig.spec.json"
-            },
-            "configurations": {},
-            "parallelism": true
-          },
           "serve-static": {
             "continuous": true,
             "executor": "@nx/web:file-server",
@@ -109,6 +103,12 @@
             "parallelism": true
           }
         },
+        "name": "dashboard",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "projectType": "application",
+        "prefix": "app",
+        "sourceRoot": "apps/dashboard/src",
+        "tags": [],
         "implicitDependencies": []
       }
     },
@@ -117,12 +117,52 @@
       "type": "lib",
       "data": {
         "root": "libs/auth",
+        "targets": {
+          "lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/auth",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/eslint.config.mjs",
+              "{workspaceRoot}/libs/auth/eslint.config.mjs",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "metadata": {
+              "technologies": [
+                "eslint"
+              ],
+              "description": "Runs ESLint on project",
+              "help": {
+                "command": "npx eslint --help",
+                "example": {
+                  "options": {
+                    "max-warnings": 0
+                  }
+                }
+              }
+            },
+            "executor": "nx:run-commands",
+            "configurations": {},
+            "parallelism": true
+          }
+        },
         "name": "auth",
         "$schema": "../../node_modules/nx/schemas/project-schema.json",
         "sourceRoot": "libs/auth/src",
         "projectType": "library",
         "tags": [],
-        "targets": {},
         "implicitDependencies": []
       }
     },
@@ -131,12 +171,52 @@
       "type": "lib",
       "data": {
         "root": "libs/data",
+        "targets": {
+          "lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/data",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/eslint.config.mjs",
+              "{workspaceRoot}/libs/data/eslint.config.mjs",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "metadata": {
+              "technologies": [
+                "eslint"
+              ],
+              "description": "Runs ESLint on project",
+              "help": {
+                "command": "npx eslint --help",
+                "example": {
+                  "options": {
+                    "max-warnings": 0
+                  }
+                }
+              }
+            },
+            "executor": "nx:run-commands",
+            "configurations": {},
+            "parallelism": true
+          }
+        },
         "name": "data",
         "$schema": "../../node_modules/nx/schemas/project-schema.json",
         "sourceRoot": "libs/data/src",
         "projectType": "library",
         "tags": [],
-        "targets": {},
         "implicitDependencies": []
       }
     },
@@ -145,20 +225,50 @@
       "type": "app",
       "data": {
         "root": "apps/api",
-        "name": "api",
-        "$schema": "../../node_modules/nx/schemas/project-schema.json",
-        "sourceRoot": "apps/api/src",
         "projectType": "application",
-        "tags": [],
+        "metadata": {},
         "targets": {
           "build": {
+            "cache": true,
+            "dependsOn": [
+              "^build"
+            ],
+            "inputs": [
+              "production",
+              "^production",
+              {
+                "externalDependencies": [
+                  "webpack-cli"
+                ]
+              }
+            ],
+            "outputs": [
+              "{workspaceRoot}/dist\\apps\\api"
+            ],
+            "metadata": {
+              "technologies": [
+                "webpack"
+              ],
+              "description": "Runs Webpack build",
+              "help": {
+                "command": "npx webpack-cli build --help",
+                "example": {
+                  "options": {
+                    "json": "stats.json"
+                  },
+                  "args": [
+                    "--profile"
+                  ]
+                }
+              }
+            },
             "executor": "nx:run-commands",
             "options": {
-              "command": "webpack-cli build",
+              "cwd": "apps/api",
               "args": [
                 "--node-env=production"
               ],
-              "cwd": "apps/api"
+              "command": "webpack-cli build"
             },
             "configurations": {
               "development": {
@@ -167,6 +277,171 @@
                 ]
               }
             },
+            "parallelism": true
+          },
+          "serve": {
+            "continuous": true,
+            "executor": "@nx/js:node",
+            "defaultConfiguration": "development",
+            "dependsOn": [
+              "build"
+            ],
+            "options": {
+              "buildTarget": "api:build",
+              "runBuildTargetDependencies": false
+            },
+            "configurations": {
+              "development": {
+                "buildTarget": "api:build:development"
+              },
+              "production": {
+                "buildTarget": "api:build:production"
+              }
+            },
+            "parallelism": true
+          },
+          "preview": {
+            "continuous": true,
+            "options": {
+              "cwd": "apps/api",
+              "args": [
+                "--node-env=production"
+              ],
+              "command": "webpack-cli serve"
+            },
+            "metadata": {
+              "technologies": [
+                "webpack"
+              ],
+              "description": "Starts Webpack dev server in production mode",
+              "help": {
+                "command": "npx webpack-cli serve --help",
+                "example": {
+                  "options": {
+                    "args": [
+                      "--client-progress",
+                      "--history-api-fallback "
+                    ]
+                  }
+                }
+              }
+            },
+            "executor": "nx:run-commands",
+            "configurations": {},
+            "parallelism": true
+          },
+          "serve-static": {
+            "continuous": true,
+            "dependsOn": [
+              "build"
+            ],
+            "executor": "@nx/web:file-server",
+            "options": {
+              "buildTarget": "build",
+              "spa": true
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "build-deps": {
+            "dependsOn": [
+              "^build"
+            ],
+            "configurations": {},
+            "options": {},
+            "parallelism": true,
+            "executor": "nx:noop"
+          },
+          "watch-deps": {
+            "continuous": true,
+            "dependsOn": [
+              "build-deps"
+            ],
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "npx nx watch --projects api --includeDependentProjects -- npx nx build-deps api"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "lint": {
+            "cache": true,
+            "options": {
+              "cwd": "apps/api",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/eslint.config.mjs",
+              "{workspaceRoot}/apps/api/eslint.config.mjs",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "metadata": {
+              "technologies": [
+                "eslint"
+              ],
+              "description": "Runs ESLint on project",
+              "help": {
+                "command": "npx eslint --help",
+                "example": {
+                  "options": {
+                    "max-warnings": 0
+                  }
+                }
+              }
+            },
+            "executor": "nx:run-commands",
+            "configurations": {},
+            "parallelism": true
+          },
+          "test": {
+            "metadata": {
+              "technologies": [
+                "jest"
+              ],
+              "description": "Run Jest Tests",
+              "help": {
+                "command": "npx jest --help",
+                "example": {
+                  "options": {
+                    "coverage": true
+                  }
+                }
+              }
+            },
+            "cache": true,
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}\\jest.preset.js",
+              {
+                "externalDependencies": [
+                  "jest"
+                ]
+              }
+            ],
+            "outputs": [
+              "{workspaceRoot}\\coverage\\apps\\api"
+            ],
+            "executor": "nx:run-commands",
+            "options": {
+              "cwd": "apps/api",
+              "env": {
+                "TS_NODE_COMPILER_OPTIONS": "{\"moduleResolution\":\"node10\",\"module\":\"commonjs\",\"customConditions\":null}"
+              },
+              "command": "jest",
+              "passWithNoTests": true
+            },
+            "configurations": {},
             "parallelism": true
           },
           "prune-lockfile": {
@@ -209,29 +484,12 @@
             "configurations": {},
             "options": {},
             "parallelism": true
-          },
-          "serve": {
-            "continuous": true,
-            "executor": "@nx/js:node",
-            "defaultConfiguration": "development",
-            "dependsOn": [
-              "build"
-            ],
-            "options": {
-              "buildTarget": "api:build",
-              "runBuildTargetDependencies": false
-            },
-            "configurations": {
-              "development": {
-                "buildTarget": "api:build:development"
-              },
-              "production": {
-                "buildTarget": "api:build:production"
-              }
-            },
-            "parallelism": true
           }
         },
+        "name": "api",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "apps/api/src",
+        "tags": [],
         "implicitDependencies": []
       }
     }
@@ -39459,40 +39717,6 @@
     ]
   },
   "version": "6.0",
-  "errors": [
-    {
-      "errors": [
-        [
-          null,
-          {}
-        ]
-      ],
-      "partialResults": [],
-      "name": "AggregateCreateNodesError",
-      "pluginIndex": 0
-    },
-    {
-      "errors": [
-        [
-          null,
-          {}
-        ]
-      ],
-      "partialResults": [],
-      "name": "AggregateCreateNodesError",
-      "pluginIndex": 1
-    },
-    {
-      "errors": [
-        [
-          null,
-          {}
-        ]
-      ],
-      "partialResults": [],
-      "name": "AggregateCreateNodesError",
-      "pluginIndex": 2
-    }
-  ],
-  "computedAt": 1770704613786
+  "errors": [],
+  "computedAt": 1770767248642
 }
