@@ -36,7 +36,10 @@ export class TaskBoardComponent implements OnInit {
     doneTasks: Task[] = [];
     users: User[] = [];
     showModal = false;
+    showEditModal = false;
     createTaskForm: FormGroup;
+    editTaskForm: FormGroup;
+    selectedTask: Task | null = null;
     Role = Role; // Expose Role enum for template
 
     constructor(
@@ -46,6 +49,12 @@ export class TaskBoardComponent implements OnInit {
         private userService: UserService
     ) {
         this.createTaskForm = this.fb.group({
+            title: ['', Validators.required],
+            description: ['', Validators.required],
+            assigneeId: ['']
+        });
+
+        this.editTaskForm = this.fb.group({
             title: ['', Validators.required],
             description: ['', Validators.required],
             assigneeId: ['']
@@ -113,6 +122,47 @@ export class TaskBoardComponent implements OnInit {
             this.taskService.create(this.createTaskForm.value).subscribe(() => {
                 this.loadTasks();
                 this.closeCreateModal();
+            });
+        }
+    }
+
+    openEditModal(task: Task, event: Event) {
+        event.stopPropagation(); // Prevent drag from triggering
+        this.selectedTask = task;
+        this.editTaskForm.patchValue({
+            title: task.title,
+            description: task.description,
+            assigneeId: task.user?.id || ''
+        });
+        this.showEditModal = true;
+    }
+
+    closeEditModal() {
+        this.showEditModal = false;
+        this.selectedTask = null;
+        this.editTaskForm.reset();
+    }
+
+    updateTask() {
+        if (this.editTaskForm.valid && this.selectedTask) {
+            const updateData = {
+                title: this.editTaskForm.value.title,
+                description: this.editTaskForm.value.description,
+                assigneeId: this.editTaskForm.value.assigneeId || undefined
+            };
+            
+            this.taskService.update(this.selectedTask.id, updateData as any).subscribe(() => {
+                this.loadTasks();
+                this.closeEditModal();
+            });
+        }
+    }
+
+    deleteTask() {
+        if (this.selectedTask && confirm('Are you sure you want to delete this task?')) {
+            this.taskService.delete(this.selectedTask.id).subscribe(() => {
+                this.loadTasks();
+                this.closeEditModal();
             });
         }
     }
