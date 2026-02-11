@@ -39,23 +39,24 @@ export class TeamMembersComponent implements OnInit {
 
   loadTeam() {
     this.userService.getAll().subscribe(users => {
-      const currentUser = this.authService.currentUserValue;
+      // Use the full user object from the list to ensure relations (managers) are present
+      const fullCurrentUser = users.find(u => u.id === this.authService.currentUserValue?.id);
       
-      if (currentUser?.role === Role.OWNER) {
+      if (fullCurrentUser?.role === Role.OWNER) {
         // Owner sees everyone
-        this.users = users.filter(u => u.id !== currentUser.id);
-      } else if (currentUser?.role === Role.ADMIN) {
+        this.users = users.filter(u => u.id !== fullCurrentUser.id);
+      } else if (fullCurrentUser?.role === Role.ADMIN) {
         // Admin sees users who have ME as one of their managers
-        this.users = users.filter(u => (u as any).managers?.some((m: User) => m.id === currentUser?.id));
+        this.users = users.filter(u => (u as any).managers?.some((m: User) => m.id === fullCurrentUser?.id));
         
         // Available users: Viewers who do NOT have me as manager
         this.availableUsers = users.filter(u => 
             u.role === Role.VIEWER && 
-            !(u as any).managers?.some((m: User) => m.id === currentUser?.id)
+            !(u as any).managers?.some((m: User) => m.id === fullCurrentUser?.id)
         );
       } else {
         // Viewers see their Managers and Peers
-        const myManagers = (currentUser as any)?.managers || [];
+        const myManagers = (fullCurrentUser as any)?.managers || [];
         const myManagerIds = myManagers.map((m: User) => m.id);
         
         if (myManagerIds.length > 0) {
