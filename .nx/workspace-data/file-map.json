@@ -37,68 +37,32 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": "db.sqlite",
-        "hash": "4472123157223469872"
-      },
-      {
-        "file": "docs/documentation.tex",
-        "hash": "10370462775012001584"
-      },
-      {
-        "file": ".prettierrc",
-        "hash": "6820402234827505055"
-      },
-      {
         "file": "eslint.config.mjs",
         "hash": "1750064783103198479"
-      },
-      {
-        "file": ".prettierignore",
-        "hash": "12269743867629339573"
-      },
-      {
-        "file": "docs/LATEX_GUIDE.md",
-        "hash": "13567413668344915775"
       },
       {
         "file": "docs/screenshots/login.png",
         "hash": "18005477670799252293"
       },
       {
-        "file": "jest.config.ts",
-        "hash": "9882362695153092473"
-      },
-      {
-        "file": "jest.preset.js",
-        "hash": "7473220183190921152"
-      },
-      {
-        "file": "package.json",
-        "hash": "15403570472044694629"
-      },
-      {
-        "file": "docs/screenshots/analytics.png",
-        "hash": "12652972484285159397"
-      },
-      {
-        "file": "REQUIREMENTS.md",
-        "hash": "576030547896867163"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "175012748032600877"
+        "file": "nx.json",
+        "hash": "2632421566580385234"
       },
       {
         "file": "TurboVets_Hema.pdf",
         "hash": "13225684177077826787"
       },
       {
-        "file": "docs/screenshots/dark-mode.png",
-        "hash": "5502281109391616213"
+        "file": ".prettierignore",
+        "hash": "12269743867629339573"
       },
       {
-        "file": ".env",
-        "hash": "17306045734109953822"
+        "file": "db.sqlite",
+        "hash": "4472123157223469872"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "175012748032600877"
       },
       {
         "file": "tsconfig.base.json",
@@ -109,28 +73,8 @@
         "hash": "11532813898455409296"
       },
       {
-        "file": ".vscode/launch.json",
-        "hash": "11397966353554284715"
-      },
-      {
-        "file": "package-lock.json",
-        "hash": "14957158838002487967"
-      },
-      {
         "file": "help.txt",
         "hash": "15234060068360636253"
-      },
-      {
-        "file": "nx.json",
-        "hash": "2632421566580385234"
-      },
-      {
-        "file": "README.md",
-        "hash": "7281437068262828184"
-      },
-      {
-        "file": ".vscode/extensions.json",
-        "hash": "5271629927757201771"
       },
       {
         "file": "Full Stack Assessment.pdf",
@@ -141,12 +85,68 @@
         "hash": "14934701734211522657"
       },
       {
+        "file": ".env",
+        "hash": "17306045734109953822"
+      },
+      {
+        "file": "docs/screenshots/dark-mode.png",
+        "hash": "5502281109391616213"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "14957158838002487967"
+      },
+      {
+        "file": "docs/LATEX_GUIDE.md",
+        "hash": "13567413668344915775"
+      },
+      {
+        "file": "docs/screenshots/analytics.png",
+        "hash": "12652972484285159397"
+      },
+      {
+        "file": "REQUIREMENTS.md",
+        "hash": "576030547896867163"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "7473220183190921152"
+      },
+      {
+        "file": "package.json",
+        "hash": "15403570472044694629"
+      },
+      {
+        "file": "README.md",
+        "hash": "7281437068262828184"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "5271629927757201771"
+      },
+      {
         "file": "docs/ERD.md",
         "hash": "6175649326205444962"
       },
       {
+        "file": ".prettierrc",
+        "hash": "6820402234827505055"
+      },
+      {
+        "file": ".vscode/launch.json",
+        "hash": "11397966353554284715"
+      },
+      {
         "file": "docs/screenshots/task-board.png",
         "hash": "6688685795120517733"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "9882362695153092473"
+      },
+      {
+        "file": "docs/documentation.tex",
+        "hash": "10370462775012001584"
       }
     ],
     "projectFileMap": {
@@ -462,7 +462,7 @@
         },
         {
           "file": "apps/api/src/app/tasks/tasks.controller.ts",
-          "hash": "2834539095101212212",
+          "hash": "17390204442360843206",
           "deps": [
             "npm:@nestjs/common",
             "auth",
