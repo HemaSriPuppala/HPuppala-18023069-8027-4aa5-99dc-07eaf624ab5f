@@ -105,7 +105,7 @@ This is a **full-stack task management application** built with modern technolog
 
 ---
 
-## 🛠 Technology Stack
+## Technology Stack
 
 ### Backend
 
@@ -138,7 +138,7 @@ This is a **full-stack task management application** built with modern technolog
 
 ---
 
-## 📦 Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have the following installed:
 
@@ -200,7 +200,7 @@ Use one of the default accounts:
 
 ---
 
-## 🏗 Architecture
+## Architecture
 
 ### System Architecture
 
@@ -260,7 +260,7 @@ Use one of the default accounts:
 
 ---
 
-## 🗄 Database Schema
+## Database Schema
 
 See the complete [Entity Relationship Diagram](./docs/ERD.md) for detailed schema information.
 
@@ -407,7 +407,7 @@ npx nx test dashboard --coverage
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 .
@@ -449,7 +449,7 @@ npx nx test dashboard --coverage
 
 ---
 
-## 🔒 Security
+## Security
 
 ### Implemented Security Measures
 
@@ -477,7 +477,7 @@ npx nx test dashboard --coverage
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 This is an assessment project, but if you'd like to suggest improvements:
 
@@ -489,13 +489,13 @@ This is an assessment project, but if you'd like to suggest improvements:
 
 ---
 
-## 📄 License
+## License
 
 This project is created for assessment purposes only.
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Hema Sri Puppala**
 

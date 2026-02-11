@@ -37,96 +37,60 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": ".vscode/code-navigation.code-snippets",
-        "hash": "14934701734211522657"
-      },
-      {
-        "file": "docs/screenshots/task-board.png",
-        "hash": "6688685795120517733"
-      },
-      {
-        "file": ".vscode/launch.json",
-        "hash": "11397966353554284715"
-      },
-      {
-        "file": "docs/LATEX_GUIDE.md",
-        "hash": "13567413668344915775"
-      },
-      {
         "file": "db.sqlite",
-        "hash": "8826794462807077478"
-      },
-      {
-        "file": "eslint.config.mjs",
-        "hash": "1750064783103198479"
+        "hash": "4472123157223469872"
       },
       {
         "file": "docs/documentation.tex",
         "hash": "10370462775012001584"
       },
       {
-        "file": ".prettierignore",
-        "hash": "12269743867629339573"
-      },
-      {
-        "file": "docs/ERD.md",
-        "hash": "6175649326205444962"
-      },
-      {
-        "file": "tsconfig.base.json",
-        "hash": "8633178226282624141"
-      },
-      {
-        "file": "TurboVets_Hema.pdf",
-        "hash": "13225684177077826787"
-      },
-      {
-        "file": "docs/screenshots/analytics.png",
-        "hash": "12652972484285159397"
-      },
-      {
-        "file": "README.md",
-        "hash": "14304803686579958416"
-      },
-      {
         "file": ".prettierrc",
         "hash": "6820402234827505055"
       },
       {
-        "file": ".gitignore",
-        "hash": "175012748032600877"
+        "file": "eslint.config.mjs",
+        "hash": "1750064783103198479"
       },
       {
-        "file": "help.txt",
-        "hash": "15234060068360636253"
+        "file": ".prettierignore",
+        "hash": "12269743867629339573"
       },
       {
-        "file": "nx.json",
-        "hash": "2632421566580385234"
-      },
-      {
-        "file": ".editorconfig",
-        "hash": "11532813898455409296"
-      },
-      {
-        "file": "jest.config.ts",
-        "hash": "9882362695153092473"
+        "file": "docs/LATEX_GUIDE.md",
+        "hash": "13567413668344915775"
       },
       {
         "file": "docs/screenshots/login.png",
         "hash": "18005477670799252293"
       },
       {
+        "file": "jest.config.ts",
+        "hash": "9882362695153092473"
+      },
+      {
         "file": "jest.preset.js",
         "hash": "7473220183190921152"
       },
       {
-        "file": "package-lock.json",
-        "hash": "14957158838002487967"
+        "file": "package.json",
+        "hash": "15403570472044694629"
+      },
+      {
+        "file": "docs/screenshots/analytics.png",
+        "hash": "12652972484285159397"
       },
       {
         "file": "REQUIREMENTS.md",
         "hash": "576030547896867163"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "175012748032600877"
+      },
+      {
+        "file": "TurboVets_Hema.pdf",
+        "hash": "13225684177077826787"
       },
       {
         "file": "docs/screenshots/dark-mode.png",
@@ -137,8 +101,32 @@
         "hash": "17306045734109953822"
       },
       {
-        "file": "package.json",
-        "hash": "15403570472044694629"
+        "file": "tsconfig.base.json",
+        "hash": "8633178226282624141"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "11532813898455409296"
+      },
+      {
+        "file": ".vscode/launch.json",
+        "hash": "11397966353554284715"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "14957158838002487967"
+      },
+      {
+        "file": "help.txt",
+        "hash": "15234060068360636253"
+      },
+      {
+        "file": "nx.json",
+        "hash": "2632421566580385234"
+      },
+      {
+        "file": "README.md",
+        "hash": "7281437068262828184"
       },
       {
         "file": ".vscode/extensions.json",
@@ -147,9 +135,71 @@
       {
         "file": "Full Stack Assessment.pdf",
         "hash": "7936680960815136684"
+      },
+      {
+        "file": ".vscode/code-navigation.code-snippets",
+        "hash": "14934701734211522657"
+      },
+      {
+        "file": "docs/ERD.md",
+        "hash": "6175649326205444962"
+      },
+      {
+        "file": "docs/screenshots/task-board.png",
+        "hash": "6688685795120517733"
       }
     ],
     "projectFileMap": {
+      "auth": [
+        {
+          "file": "libs/auth/README.md",
+          "hash": "7274676650549579068"
+        },
+        {
+          "file": "libs/auth/eslint.config.mjs",
+          "hash": "825007401213781954"
+        },
+        {
+          "file": "libs/auth/project.json",
+          "hash": "4020757868934545464"
+        },
+        {
+          "file": "libs/auth/src/index.ts",
+          "hash": "6310047817374567669"
+        },
+        {
+          "file": "libs/auth/src/lib/auth.module.ts",
+          "hash": "13413540601404193981",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/auth/src/lib/roles.decorator.ts",
+          "hash": "13173863048412699561",
+          "deps": [
+            "npm:@nestjs/common",
+            "data"
+          ]
+        },
+        {
+          "file": "libs/auth/src/lib/roles.guard.ts",
+          "hash": "9278732263470648663",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/core",
+            "data"
+          ]
+        },
+        {
+          "file": "libs/auth/tsconfig.json",
+          "hash": "15221172949019673729"
+        },
+        {
+          "file": "libs/auth/tsconfig.lib.json",
+          "hash": "9976025233647017608"
+        }
+      ],
       "api": [
         {
           "file": "apps/api/eslint.config.mjs",
@@ -742,7 +792,7 @@
         },
         {
           "file": "apps/dashboard/src/app/pages/tasks/task-board.component.ts",
-          "hash": "7007226911850791577",
+          "hash": "15569317449296161731",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/common",
@@ -805,56 +855,6 @@
         {
           "file": "apps/dashboard/tsconfig.spec.json",
           "hash": "10602790377398851273"
-        }
-      ],
-      "auth": [
-        {
-          "file": "libs/auth/README.md",
-          "hash": "7274676650549579068"
-        },
-        {
-          "file": "libs/auth/eslint.config.mjs",
-          "hash": "825007401213781954"
-        },
-        {
-          "file": "libs/auth/project.json",
-          "hash": "4020757868934545464"
-        },
-        {
-          "file": "libs/auth/src/index.ts",
-          "hash": "6310047817374567669"
-        },
-        {
-          "file": "libs/auth/src/lib/auth.module.ts",
-          "hash": "13413540601404193981",
-          "deps": [
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "libs/auth/src/lib/roles.decorator.ts",
-          "hash": "13173863048412699561",
-          "deps": [
-            "npm:@nestjs/common",
-            "data"
-          ]
-        },
-        {
-          "file": "libs/auth/src/lib/roles.guard.ts",
-          "hash": "9278732263470648663",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/core",
-            "data"
-          ]
-        },
-        {
-          "file": "libs/auth/tsconfig.json",
-          "hash": "15221172949019673729"
-        },
-        {
-          "file": "libs/auth/tsconfig.lib.json",
-          "hash": "9976025233647017608"
         }
       ],
       "data": [

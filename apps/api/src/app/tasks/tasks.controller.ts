@@ -8,7 +8,7 @@ import { Roles } from '@antigravity-ai-assessment/auth';
 import { Role } from '@antigravity-ai-assessment/data';
 
 @Controller('tasks')
-@UseGuards(JwtAuthGuard, RolesGuard)
+@UseGuards(JwtAuthGuard, RolesGuard)                                       // ensures authentication 
 export class TasksController {
   constructor(private readonly tasksService: TasksService) { }
 

@@ -128,6 +128,12 @@ export class TaskBoardComponent implements OnInit {
 
     openEditModal(task: Task, event: Event) {
         event.stopPropagation(); // Prevent drag from triggering
+        
+        // Prevent Viewers from opening edit modal
+        if (this.authService.currentUserValue?.role === Role.VIEWER) {
+            return;
+        }
+
         this.selectedTask = task;
         this.editTaskForm.patchValue({
             title: task.title,
